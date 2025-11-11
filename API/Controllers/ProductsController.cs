@@ -13,6 +13,7 @@ namespace API.Controllers
         // Async way fo doing a request.
         // Here the thread will delegate the get call to a task
         [HttpGet]
+        [ProducesResponseType(typeof(List<Product>), StatusCodes.Status200OK)]
         public async Task<ActionResult<List<Product>>> GetProducts()
         {
             return await context.Products.ToListAsync();
